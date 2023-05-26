@@ -18,6 +18,7 @@ void APlayerController_cpp::BeginPlay()
 		if (WidgetInstance)
 		{
 			WidgetInstance->AddToViewport();
+			WidgetRef = WidgetInstance;
 		}
 		else
 		{

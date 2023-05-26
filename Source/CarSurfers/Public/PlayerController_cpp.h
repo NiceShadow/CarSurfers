@@ -12,6 +12,9 @@ class CARSURFERS_API APlayerController_cpp : public APlayerController
 public:
 
 	UPROPERTY(BlueprintReadWrite, Category = "UI")
+	UObject* WidgetRef;
+	
+	UPROPERTY(BlueprintReadWrite, Category = "UI")
 	int32 CoinCounter;
 
 	UFUNCTION(BlueprintCallable, Category = "Coin")
