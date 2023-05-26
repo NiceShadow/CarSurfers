@@ -4,6 +4,8 @@
 void APlayerController_cpp::BeginPlay()
 {
 	Super::BeginPlay();
+
+	//spawn the widget into the viewport
 	
 	FString WidgetPath = "/Game/Blueprints/UIWidget.UIWidget_C";
 	UClass* WidgetClass = LoadClass<UUserWidget>(nullptr, *WidgetPath);

@@ -14,7 +14,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "UI")
 	int32 CoinCounter;
 
-	UFUNCTION(BlueprintCallable, Category = "MyCategory")
+	UFUNCTION(BlueprintCallable, Category = "Coin")
 	void IncrementVariable();
 	
 	virtual void BeginPlay() override;
