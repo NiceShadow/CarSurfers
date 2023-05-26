@@ -28,8 +28,11 @@ protected:
 	URotatingMovementComponent* RotatingMovementComponent;
 
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
+	
+	UFUNCTION(BlueprintCallable, Category = "Audio")
+	void PlayCoinSound();
 };

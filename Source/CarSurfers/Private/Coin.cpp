@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "PlayerController_cpp.h"
+#include "Sound/SoundBase.h"
 
 ACoin::ACoin()
 {
@@ -58,11 +59,24 @@ void ACoin::OnCoinOverlap(AActor* OverlappedActor, AActor* OtherActor)
 				break;
 			}
 		}
-		
+		PlayCoinSound();
 		// Destroy the coin actor
 		Destroy();
 	}
 }
 
+
+void ACoin::PlayCoinSound()
+{
+	// Load the sound asset from a file
+	FStringAssetReference SoundRef(TEXT("/Game/Other/SCoin"));
+	USoundBase* SoundAsset = Cast<USoundBase>(SoundRef.TryLoad());
+
+	if (SoundAsset)
+	{
+		// Play the sound
+		UGameplayStatics::PlaySound2D(this, SoundAsset);
+	}
+}
 
 
