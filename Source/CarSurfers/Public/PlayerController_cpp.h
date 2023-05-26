@@ -16,6 +16,28 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Coin")
 	void IncrementVariable();
+
+	UFUNCTION(BlueprintPure, Category = "Player Character")
+	float GetPlayerCharacterXLocation() const;
+	
+	UPROPERTY(BlueprintReadWrite, Category = "UI")
+	int32 Score;
+
+	UFUNCTION(BlueprintCallable, Category = "Level")
+	void ResetLevel();
 	
 	virtual void BeginPlay() override;
+
+	// Declare the timer function
+	void TimerFunction();
+
+	// Start the timer
+	void StartTimer();
+
+	// Stop the timer
+	void StopTimer();
+	
+protected:
+
+	FTimerHandle TimerHandle;
 };

@@ -34,7 +34,7 @@ void ACoin::Tick(float DeltaTime)
 	if (PlayerCharacter)
 	{
 		// Compare X values
-		if (GetActorLocation().X > PlayerCharacter->GetActorLocation().X)
+		if (GetActorLocation().X > PlayerCharacter->GetActorLocation().X + 500)
 		{
 			// Destroy the actor
 			Destroy();
